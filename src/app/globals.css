@@ -89,6 +89,58 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Border glow: rotating gradient + pulsing opacity */
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-glow-rotate {
+  from { --glow-angle: 0deg; }
+  to   { --glow-angle: 360deg; }
+}
+
+@keyframes border-glow-pulse {
+  0%, 100% { opacity: 0.25; }
+  50%      { opacity: 0.8; }
+}
+
+.border-glow {
+  background: conic-gradient(
+    from var(--glow-angle),
+    rgba(74, 111, 255, 0.7),
+    rgba(176, 112, 255, 0.5),
+    rgba(74, 111, 255, 0.7),
+    rgba(176, 112, 255, 0.5),
+    rgba(74, 111, 255, 0.7)
+  );
+  animation: border-glow-rotate 4s linear infinite, border-glow-pulse 9.5s ease-in-out infinite;
+}
+
+@keyframes border-glow-shadow-pulse {
+  0%, 100% { opacity: 0.15; }
+  50%      { opacity: 0.6; }
+}
+
+.border-glow-shadow {
+  background: conic-gradient(
+    from var(--glow-angle),
+    rgba(74, 111, 255, 0.4),
+    rgba(176, 112, 255, 0.25),
+    rgba(74, 111, 255, 0.4),
+    rgba(176, 112, 255, 0.25),
+    rgba(74, 111, 255, 0.4)
+  );
+  filter: blur(21px);
+  animation: border-glow-rotate 4s linear infinite, border-glow-shadow-pulse 9.5s ease-in-out infinite;
+}
+
 /* Balanced title line breaks — never one word per line */
 .title-measure {
   max-width: 16ch;

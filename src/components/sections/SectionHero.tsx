@@ -53,7 +53,7 @@ export default function SectionHero() {
             <Button href="#contact" variant="primary">
               {t.hero.cta}
             </Button>
-            <Button href="#cases" variant="secondary">
+            <Button href="#services" variant="secondary">
               {t.hero.ctaSecondary}
             </Button>
           </motion.div>

@@ -6,6 +6,7 @@ import SectionHero from "@/components/sections/SectionHero";
 import SectionMetrics from "@/components/sections/SectionMetrics";
 import SectionServices from "@/components/sections/SectionServices";
 import SectionCases from "@/components/sections/SectionCases";
+import SectionProjects from "@/components/sections/SectionProjects";
 import SectionAbout from "@/components/sections/SectionAbout";
 import SectionFAQ from "@/components/sections/SectionFAQ";
 import SectionContact from "@/components/sections/SectionContact";
@@ -22,6 +23,7 @@ export default function Home() {
           <SectionMetrics />
           <SectionServices />
           <SectionCases />
+          <SectionProjects />
           <SectionAbout />
           <SectionFAQ />
           <SectionContact />

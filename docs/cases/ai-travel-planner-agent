@@ -1,0 +1,13 @@
+# Bestrip: AI Travel Planner
+
+## **Project & Problem**
+
+Bestrip is a travel planning app built around a specific frustration: planning an itinerary usually means hours crossing scattered travel blogs trying to build something that fits your budget and style. Most tools ignore the details that actually matter, like who you're traveling with, your pace and the real weather when you'll be there.
+
+## **The Solution**
+
+The app starts by understanding the traveler: destination, travel companions, pace, budget and dates. From there, it calls the Gemini Flash model to generate a personalized city guide with climate charts, budget estimates, safety alerts, neighborhood picks and day trip suggestions. The whole platform works in English and Portuguese, switchable in one click.
+
+## **Architecture & Stack**
+
+Built on React 18 and Vite, with Tailwind CSS for layout and Motion for interactions. The app connects to the Google Gen AI SDK with real-time Search grounding, which keeps location data and travel conditions current. User preferences are sent through a structured prompt that maps directly to the UI components, keeping the generated output consistent across sessions.

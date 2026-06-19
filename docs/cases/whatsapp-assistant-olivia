@@ -1,0 +1,13 @@
+# Olívia: AI Receptionist for a Psychology Clinic
+
+## Project & Problem
+
+A psychologist was spending hours every day answering WhatsApp messages: scheduling appointments, handling cancellations and onboarding new patients. Olívia was built to handle that automatically. Patients keep messaging on WhatsApp as they always did, and Olívia takes care of the rest.
+
+## The Solution
+
+Olívia is a multi-agent system. The main agent handles the conversation: it identifies whether someone is a new or returning patient, pulls their record and uses that context before responding. Voice notes get transcribed automatically. When scheduling is needed, Olívia delegates to a dedicated sub-agent that connects directly to Google Calendar, with each agent responsible for its own task.
+
+## Architecture & Stack
+
+Orchestrated in n8n self-hosted, with GPT-4.1 as the main agent and GPT-4o mini powering the scheduling sub-agent. Patient data and conversation memory live in Supabase/PostgreSQL with sessions isolated by WhatsApp number. The stack runs on a VPS under Docker, keeping patient data off any third-party platform.

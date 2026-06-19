@@ -1,9 +1,21 @@
+export type CaseProject = {
+  slug: string;
+  name: string;
+  tag: string;
+  problem: string;
+  solution: string;
+  result: string;
+  description: string;
+  stack: string[];
+  demoUrl?: string;
+};
+
 export type Lang = "en" | "pt";
 
 const en = {
   nav: {
     services: "Services",
-    cases: "Cases",
+    cases: "Projects",
     about: "About",
     faq: "FAQ",
     contact: "Contact",
@@ -38,11 +50,53 @@ const en = {
   },
   cases: {
     label: "Applications",
+    viewAll: "View all projects",
+    backToHome: "← uaiLabs",
+    pageTitle: "Projects",
+    pageSubtitle: "Real solutions built for real problems. Each project is a destination in our journey.",
+    problemLabel: "Problem",
+    solutionLabel: "Solution",
+    detailsLabel: "Details",
+    projectsLabel: "Built & shipped",
     items: [
       { tag: "Support", client: "Customer support", metric: "Up to 70% of tickets resolved automatically", result: "AI handles common questions, troubleshooting, and status checks around the clock. Human agents only step in for cases that truly need a personal touch — cutting response time from hours to seconds." },
       { tag: "Sales", client: "Sales & marketing", metric: "3× more qualified leads per rep", result: "Every incoming lead gets an instant, personalized response. The AI qualifies, scores, and routes prospects so your team only talks to buyers who are ready — no cold outreach, no wasted calls." },
       { tag: "Operations", client: "Day-to-day operations", metric: "15+ hours saved per week", result: "Reports compile themselves, documents get reviewed automatically, and records stay up to date without anyone remembering to do it. Your team focuses on decisions, not data entry." },
     ],
+    projects: [
+      {
+        slug: "olivia",
+        name: "Olívia",
+        tag: "AI Receptionist",
+        problem: "A psychologist spending hours daily answering WhatsApp messages, scheduling and onboarding patients.",
+        solution: "Multi-agent system that handles conversations, identifies patients, transcribes voice notes, and manages Google Calendar.",
+        result: "Full reception automated 24/7",
+        description: "Olívia is a multi-agent system. The main agent handles the conversation: it identifies whether someone is a new or returning patient, pulls their record and uses that context before responding. Voice notes get transcribed automatically. When scheduling is needed, Olívia delegates to a dedicated sub-agent that connects directly to Google Calendar.",
+        stack: ["n8n", "GPT-4.1", "GPT-4o mini", "Supabase", "PostgreSQL", "WhatsApp", "Google Calendar", "Docker"],
+        demoUrl: "https://drive.google.com/file/d/10jMiqmmxJHGcsctsdW2GHFiKWp9yYWAd/preview",
+      },
+      {
+        slug: "rocketfit",
+        name: "Rocket Fit",
+        tag: "Support Agent",
+        problem: "Growing user base with manual WhatsApp support — slow response times and inconsistent answers.",
+        solution: "RAG-powered agent on WhatsApp that pulls from a structured knowledge base before every response.",
+        result: "Instant 24/7 support without adding headcount",
+        description: "A customer support agent built to answer questions about the Rocket Fit app: how features work, common usage issues and known bugs. It uses RAG to pull relevant information from a structured knowledge base of FAQs and product documentation before generating any response, keeping answers accurate and grounded.",
+        stack: ["n8n", "OpenAI", "Supabase", "pgvector", "WhatsApp", "Docker"],
+      },
+      {
+        slug: "bestrip",
+        name: "Bestrip",
+        tag: "AI Travel Planner",
+        problem: "Planning a trip means hours crossing scattered travel blogs, ignoring budget, pace, and real weather.",
+        solution: "App that generates personalized city guides with climate, budget, safety, and neighborhood picks.",
+        result: "Complete travel plans in seconds",
+        description: "The app starts by understanding the traveler: destination, travel companions, pace, budget and dates. From there, it calls the Gemini Flash model to generate a personalized city guide with climate charts, budget estimates, safety alerts, neighborhood picks and day trip suggestions. Works in English and Portuguese.",
+        stack: ["React", "Vite", "Tailwind CSS", "Gemini Flash", "Google Gen AI SDK"],
+        demoUrl: "https://drive.google.com/file/d/1_21_qS9KzosWbxuFPVyMjudMHPmChbUS/preview",
+      },
+    ] as CaseProject[],
   },
   about: {
     label: "About",
@@ -77,7 +131,7 @@ export type Translation = typeof en;
 const pt: Translation = {
   nav: {
     services: "Serviços",
-    cases: "Na prática",
+    cases: "Projetos",
     about: "Sobre",
     faq: "FAQ",
     contact: "Contato",
@@ -112,11 +166,53 @@ const pt: Translation = {
   },
   cases: {
     label: "Na prática",
+    viewAll: "Ver todos os projetos",
+    backToHome: "← uaiLabs",
+    pageTitle: "Projetos",
+    pageSubtitle: "Soluções reais construídas para problemas reais. Cada projeto é um destino na nossa jornada.",
+    problemLabel: "Problema",
+    solutionLabel: "Solução",
+    detailsLabel: "Detalhes",
+    projectsLabel: "Construído & entregue",
     items: [
       { tag: "Suporte técnico", client: "Provedores de internet", metric: "Até 70% dos chamados resolvidos sozinhos", result: "A IA resolve dúvidas comuns, testes de conexão e consultas de status 24 horas por dia. O atendente humano só entra quando realmente precisa — reduzindo o tempo de resposta de horas para segundos." },
       { tag: "Gestão de documentos", client: "Escritórios contábeis", metric: "15+ horas por semana devolvidas", result: "Cobrança de documentos fiscais, conferência de dados e alertas de prazo rodando no automático. Ninguém precisa lembrar de cobrar, conferir ou correr atrás — o sistema avisa quando algo precisa de atenção." },
       { tag: "Qualificação de leads", client: "Imobiliárias e corretores", metric: "3× mais leads qualificados por corretor", result: "O lead entra pelo WhatsApp, é atendido na hora, responde um filtro inteligente e só chega pro corretor se tiver perfil e interesse real de compra. Sem ligação fria, sem tempo perdido." },
     ],
+    projects: [
+      {
+        slug: "olivia",
+        name: "Olívia",
+        tag: "Recepcionista IA",
+        problem: "Psicóloga gastando horas por dia respondendo WhatsApp, agendando e fazendo onboarding de pacientes.",
+        solution: "Sistema multi-agente que conversa, identifica pacientes, transcreve áudios e gerencia o Google Calendar.",
+        result: "Recepção automatizada 24/7",
+        description: "Olívia é um sistema multi-agente. O agente principal conduz a conversa: identifica se é paciente novo ou recorrente, puxa o histórico e usa esse contexto antes de responder. Áudios são transcritos automaticamente. Quando precisa agendar, a Olívia delega para um sub-agente dedicado que conecta direto no Google Calendar.",
+        stack: ["n8n", "GPT-4.1", "GPT-4o mini", "Supabase", "PostgreSQL", "WhatsApp", "Google Calendar", "Docker"],
+        demoUrl: "https://drive.google.com/file/d/10jMiqmmxJHGcsctsdW2GHFiKWp9yYWAd/preview",
+      },
+      {
+        slug: "rocketfit",
+        name: "Rocket Fit",
+        tag: "Agente de Suporte",
+        problem: "Base de usuários crescendo com suporte manual no WhatsApp — tempo de resposta alto e respostas inconsistentes.",
+        solution: "Agente com RAG no WhatsApp que consulta a base de conhecimento antes de cada resposta.",
+        result: "Suporte 24/7 sem precisar contratar",
+        description: "Um agente de suporte construído para responder dúvidas sobre o app Rocket Fit: como as funcionalidades funcionam, problemas comuns e bugs conhecidos. Usa RAG para puxar informações relevantes de uma base de FAQs e documentação do produto antes de gerar qualquer resposta.",
+        stack: ["n8n", "OpenAI", "Supabase", "pgvector", "WhatsApp", "Docker"],
+      },
+      {
+        slug: "bestrip",
+        name: "Bestrip",
+        tag: "Planejador de Viagem IA",
+        problem: "Planejar uma viagem significa horas cruzando blogs dispersos, ignorando orçamento, ritmo e clima real.",
+        solution: "App que gera guias personalizados com clima, orçamento, segurança e recomendações de bairros.",
+        result: "Roteiros completos em segundos",
+        description: "O app começa entendendo o viajante: destino, companhia, ritmo, orçamento e datas. A partir daí, chama o modelo Gemini Flash para gerar um guia personalizado com gráficos de clima, estimativas de custo, alertas de segurança e sugestões de bairros e passeios. Funciona em português e inglês.",
+        stack: ["React", "Vite", "Tailwind CSS", "Gemini Flash", "Google Gen AI SDK"],
+        demoUrl: "https://drive.google.com/file/d/1_21_qS9KzosWbxuFPVyMjudMHPmChbUS/preview",
+      },
+    ] as CaseProject[],
   },
   about: {
     label: "Sobre",

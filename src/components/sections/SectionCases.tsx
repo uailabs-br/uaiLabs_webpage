@@ -144,7 +144,7 @@ function CaseRow({
 export default function SectionCases() {
   const { t } = useLanguage();
   return (
-    <SectionWrapper id="cases">
+    <SectionWrapper id="applications">
       <div>
         <SectionLabel>{t.cases.label}</SectionLabel>
         <div className="border-t border-text-3/40">
