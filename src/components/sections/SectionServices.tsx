@@ -62,14 +62,6 @@ function ServiceCard({ title, desc, index }: { title: string; desc: string; inde
       }`}
     >
       <div className={`absolute inset-0 pointer-events-none bg-gradient-to-tr from-primary/10 via-transparent to-secondary/5 transition-opacity duration-500 ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-      <div className="relative z-10 mb-6 flex items-center justify-between">
-        <span className="font-mono text-[11px] tracking-[0.2em] text-text-2">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className={`transition-all duration-500 ${active ? "translate-x-1 text-primary" : "text-text-3 group-hover:translate-x-1 group-hover:text-primary"}`}>
-          →
-        </span>
-      </div>
       <h3
         className="relative z-10 font-display text-2xl font-bold text-text md:text-[28px]"
         style={{ letterSpacing: "-0.02em" }}
@@ -87,7 +79,7 @@ export default function SectionServices() {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   return (
-    <SectionWrapper id="services">
+    <SectionWrapper id="services" sectionClassName="!min-h-[40vh] md:!min-h-[140vh]">
       <div>
         <SectionLabel>{t.services.label}</SectionLabel>
         <div className="grid gap-6 md:grid-cols-2">

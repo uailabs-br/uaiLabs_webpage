@@ -68,19 +68,19 @@ const faqPage = {
   mainEntity: [
     {
       q: "Do I need to understand AI?",
-      a: "No. I handle the technical side; you bring the knowledge of your business.",
+      a: "No. You don't need any technical background. I handle the AI engineering, integrations, and infrastructure end to end. What you bring is something no AI can replace: deep knowledge of how your business works, what your customers need, and where the bottlenecks are. In practice, our conversations feel more like business strategy sessions than tech meetings. You describe the problem, I build the solution.",
     },
     {
       q: "Does it work in my industry?",
-      a: "Every solution is built to fit your context. It's not something off the shelf.",
+      a: "Yes. Because nothing is pre-built or off the shelf. Every solution is designed from scratch around your processes, your data, and your team's reality. I've worked with service providers, professional firms, real estate, and retail, but the industry matters less than the problem. If your team spends hours on repetitive tasks, manual reviews, or answering the same questions, AI can help regardless of the sector.",
     },
     {
       q: "How long until I see results?",
-      a: "Weeks, not months. We start with what makes the biggest difference fastest.",
+      a: "Most projects deliver a working first version within 2 to 4 weeks. We start with a 30-minute conversation to map the highest-impact opportunity, then move straight to building. There's no months-long discovery phase or bulky proposal deck. You'll see a functional prototype quickly, validate it with real use, and iterate from there. The goal is always the same: a solution running and generating value as fast as possible.",
     },
     {
       q: "What if I don't know where to start?",
-      a: "That's exactly what the free conversation is for.",
+      a: "That's exactly what the initial conversation is for. In 30 minutes, we walk through your day-to-day operations together and spot where AI can save the most time or reduce the most friction. You don't need a project brief or a tech plan beforehand. Most clients come in knowing they want to use AI but unsure where, and leave with a clear, prioritized next step.",
     },
   ].map(({ q, a }) => ({
     "@type": "Question",

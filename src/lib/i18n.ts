@@ -39,25 +39,26 @@ const en = {
   cases: {
     label: "Applications",
     items: [
-      { tag: "Support", client: "Customer support", result: "Support that answers instantly and only passes to a person what truly needs one" },
-      { tag: "Sales", client: "Sales & marketing", result: "Qualified prospects and personalized responses, with no waiting line" },
-      { tag: "Operations", client: "Day-to-day operations", result: "Reports, reviews, and records that take care of themselves" },
+      { tag: "Support", client: "Customer support", metric: "Up to 70% of tickets resolved automatically", result: "AI handles common questions, troubleshooting, and status checks around the clock. Human agents only step in for cases that truly need a personal touch — cutting response time from hours to seconds." },
+      { tag: "Sales", client: "Sales & marketing", metric: "3× more qualified leads per rep", result: "Every incoming lead gets an instant, personalized response. The AI qualifies, scores, and routes prospects so your team only talks to buyers who are ready — no cold outreach, no wasted calls." },
+      { tag: "Operations", client: "Day-to-day operations", metric: "15+ hours saved per week", result: "Reports compile themselves, documents get reviewed automatically, and records stay up to date without anyone remembering to do it. Your team focuses on decisions, not data entry." },
     ],
   },
   about: {
     label: "About",
     titlePre: "\"Uai\" happens when the result",
     titleHighlight: "exceeds expectations.",
-    body1: "uaiLabs was born to turn AI's potential into practical results for businesses. I bring together engineering, product, and business vision to find where AI truly creates value, and turn that opportunity into a solution that works.",
-    body2: "Every project is born to be used, generate impact, and evolve alongside the business.",
+    body1: "I created uaiLabs to turn AI's potential into practical results and simplify people's lives. I bring together engineering, product, and business vision to find where AI truly creates value, and turn that opportunity into a solution that's actually useful.",
+    body2: "Every project is built to generate impact and evolve alongside the business.",
+    cta: "I want to know more",
   },
   faq: {
     label: "FAQ",
     items: [
-      { q: "Do I need to understand AI?", a: "No. I handle the technical side; you bring the knowledge of your business." },
-      { q: "Does it work in my industry?", a: "Every solution is built to fit your context. It's not something off the shelf." },
-      { q: "How long until I see results?", a: "Weeks, not months. We start with what makes the biggest difference fastest." },
-      { q: "What if I don't know where to start?", a: "That's exactly what the free conversation is for." },
+      { q: "Do I need to understand AI?", a: "No. You don't need any technical background. I handle the AI engineering, integrations, and infrastructure end to end. What you bring is something no AI can replace: deep knowledge of how your business works, what your customers need, and where the bottlenecks are. In practice, our conversations feel more like business strategy sessions than tech meetings. You describe the problem, I build the solution." },
+      { q: "Does it work in my industry?", a: "Yes. Because nothing is pre-built or off the shelf. Every solution is designed from scratch around your processes, your data, and your team's reality. I've worked with service providers, professional firms, real estate, and retail, but the industry matters less than the problem. If your team spends hours on repetitive tasks, manual reviews, or answering the same questions, AI can help regardless of the sector." },
+      { q: "How long until I see results?", a: "Most projects deliver a working first version within 2 to 4 weeks. We start with a 30-minute conversation to map the highest-impact opportunity, then move straight to building. There's no months-long discovery phase or bulky proposal deck. You'll see a functional prototype quickly, validate it with real use, and iterate from there. The goal is always the same: a solution running and generating value as fast as possible." },
+      { q: "What if I don't know where to start?", a: "That's exactly what the initial conversation is for. In 30 minutes, we walk through your day-to-day operations together and spot where AI can save the most time or reduce the most friction. You don't need a project brief or a tech plan beforehand. Most clients come in knowing they want to use AI but unsure where, and leave with a clear, prioritized next step." },
     ],
   },
   contact: {
@@ -112,25 +113,26 @@ const pt: Translation = {
   cases: {
     label: "Na prática",
     items: [
-      { tag: "Suporte técnico", client: "Provedores de internet", result: "Chamados simples resolvidos automaticamente, sem fila e sem precisar de atendente" },
-      { tag: "Gestão de documentos", client: "Escritórios contábeis", result: "Cobrança e conferência de documentos fiscais rodando sem depender de ninguém lembrar" },
-      { tag: "Qualificação de leads", client: "Imobiliárias e corretores", result: "Lead entra pelo WhatsApp, é qualificado e só chega pro corretor se for cliente com real interesse de compra" },
+      { tag: "Suporte técnico", client: "Provedores de internet", metric: "Até 70% dos chamados resolvidos sozinhos", result: "A IA resolve dúvidas comuns, testes de conexão e consultas de status 24 horas por dia. O atendente humano só entra quando realmente precisa — reduzindo o tempo de resposta de horas para segundos." },
+      { tag: "Gestão de documentos", client: "Escritórios contábeis", metric: "15+ horas por semana devolvidas", result: "Cobrança de documentos fiscais, conferência de dados e alertas de prazo rodando no automático. Ninguém precisa lembrar de cobrar, conferir ou correr atrás — o sistema avisa quando algo precisa de atenção." },
+      { tag: "Qualificação de leads", client: "Imobiliárias e corretores", metric: "3× mais leads qualificados por corretor", result: "O lead entra pelo WhatsApp, é atendido na hora, responde um filtro inteligente e só chega pro corretor se tiver perfil e interesse real de compra. Sem ligação fria, sem tempo perdido." },
     ],
   },
   about: {
     label: "Sobre",
     titlePre: "O \"uai\" acontece quando o resultado",
     titleHighlight: "supera a expectativa.",
-    body1: "A uaiLabs nasceu para transformar o potencial da IA em resultados práticos para empresas. Eu uno engenharia, produto e visão de negócio para encontrar onde a IA realmente gera valor e transformar essa oportunidade em uma solução funcionando.",
-    body2: "Cada projeto nasce para ser usado, gerar impacto e evoluir junto com o negócio.",
+    body1: "Criei a uaiLabs para transformar o potencial da IA em resultados práticos e simplificar a vida das pessoas. Eu uno engenharia, produto e visão de negócio para encontrar onde a IA realmente gera valor e transformar essa oportunidade em uma solução realmente útil.",
+    body2: "Cada projeto nasce para gerar impacto e evoluir junto com o negócio.",
+    cta: "Quero saber mais",
   },
   faq: {
     label: "FAQ",
     items: [
-      { q: "Preciso entender de IA?", a: "Não. Eu cuido da parte técnica; você traz o conhecimento do seu negócio." },
-      { q: "Funciona no meu setor?", a: "Cada solução é construída sob medida para o seu contexto. Não é nada de prateleira." },
-      { q: "Quanto tempo até ver resultado?", a: "Semanas, não meses. Começamos pelo que faz mais diferença mais rápido." },
-      { q: "E se eu não souber por onde começar?", a: "É exatamente para isso que existe a conversa gratuita." },
+      { q: "Preciso entender de IA?", a: "Não. Você não precisa ter nenhum conhecimento técnico. Eu cuido de toda a engenharia, integrações e infraestrutura de ponta a ponta. O que você traz é algo que nenhuma IA substitui: conhecimento profundo de como seu negócio funciona, o que seus clientes precisam e onde estão os gargalos. Na prática, nossas conversas parecem mais reuniões de estratégia de negócio do que de tecnologia. Você descreve o problema, eu construo a solução." },
+      { q: "Funciona no meu setor?", a: "Sim. Porque nada é pronto ou de prateleira. Cada solução é desenhada do zero a partir dos seus processos, dos seus dados e da realidade da sua equipe. Já trabalhei com provedores de serviços, escritórios, imobiliárias e varejo, mas o setor importa menos que o problema. Se sua equipe gasta horas em tarefas repetitivas, conferências manuais ou respondendo as mesmas perguntas, a IA pode ajudar independente do ramo." },
+      { q: "Quanto tempo até ver resultado?", a: "A maioria dos projetos entrega uma primeira versão funcionando em 2 a 4 semanas. Começamos com uma conversa de 30 minutos para mapear a oportunidade de maior impacto, e partimos direto para a construção. Não existe fase de discovery de meses nem proposta engessada. Você vê um protótipo funcional rápido, valida com uso real e itera a partir dali. O objetivo é sempre o mesmo: solução rodando e gerando valor o mais rápido possível." },
+      { q: "E se eu não souber por onde começar?", a: "É exatamente para isso que existe a conversa inicial. Em 30 minutos, percorremos juntos a sua operação do dia a dia e identificamos onde a IA pode economizar mais tempo ou reduzir mais atrito. Você não precisa chegar com um briefing ou um plano técnico pronto. A maioria dos clientes chega sabendo que quer usar IA, mas sem saber onde, e sai com um próximo passo claro e priorizado." },
     ],
   },
   contact: {

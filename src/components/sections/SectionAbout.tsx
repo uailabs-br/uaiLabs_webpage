@@ -29,6 +29,13 @@ export default function SectionAbout() {
             <p className="text-body text-text-2">
               {t.about.body2}
             </p>
+            <a
+              href="#contact"
+              className="mt-2 inline-flex items-center gap-2 font-mono text-sm text-primary transition-colors duration-300 hover:text-secondary"
+            >
+              {t.about.cta}
+              <span aria-hidden="true">&rarr;</span>
+            </a>
           </motion.div>
         </div>
       </div>

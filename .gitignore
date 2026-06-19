@@ -42,3 +42,7 @@ next-env.d.ts
 
 # claude code
 .claude/
+
+# seo audit artifacts
+/screenshots/
+seo-audit-report.md
