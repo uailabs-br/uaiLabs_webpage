@@ -51,7 +51,7 @@ export default function SpaceCanvas() {
   return (
     <div className="fixed inset-0 z-0">
       <Canvas
-        dpr={mobile ? [1, 1] : [1, 1.5]}
+        dpr={mobile ? [1, 2] : [1, 1.5]}
         gl={{ antialias: true, powerPreference: "high-performance" }}
         camera={{ position: [0, 0, 0], fov: 72, near: 1, far: 1500 }}
         frameloop="always"

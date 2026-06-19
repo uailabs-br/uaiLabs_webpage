@@ -39,10 +39,11 @@ export default function SectionWrapper({
     <section
       ref={containerRef}
       id={id}
-      className={`relative min-h-[100vh] w-full md:min-h-[140vh] ${sectionClassName ?? ""}`}
+      className={`relative w-full min-h-0 md:min-h-[140vh] ${sectionClassName ?? ""}`}
     >
+      {/* Mobile: normal flow, content-sized. Desktop: sticky parallax. */}
       <div
-        className={`sticky top-0 flex h-screen items-start pt-[10vh] md:pt-[16vh] ${className}`}
+        className={`py-20 md:sticky md:top-0 md:flex md:h-screen md:items-start md:pt-[16vh] md:py-0 ${className}`}
       >
         <motion.div
           style={{ opacity, y }}
