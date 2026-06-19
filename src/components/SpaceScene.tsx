@@ -37,7 +37,7 @@ export default function SpaceScene({ scrollProgress, mobile = false }: SpaceScen
       <Planet
         position={[35, 10, -90]}
         radius={14}
-        texture="/textures/planets/mars.jpg"
+        texture="/textures/planets/mars.webp"
         atmosphere="#ffb27a"
         roughness={0.95}
         tilt={0.3}
@@ -46,7 +46,7 @@ export default function SpaceScene({ scrollProgress, mobile = false }: SpaceScen
       <Planet
         position={[-45, -16, -210]}
         radius={15.84}
-        texture="/textures/planets/jupiter.jpg"
+        texture="/textures/planets/jupiter.webp"
         atmosphere="#f0d9a8"
         roughness={0.8}
         tilt={-0.2}
@@ -57,7 +57,7 @@ export default function SpaceScene({ scrollProgress, mobile = false }: SpaceScen
         <Planet
           position={[58, 26, -360]}
           radius={6.3}
-          texture="/textures/planets/haumea.jpg"
+          texture="/textures/planets/haumea.webp"
           atmosphere="#eaf0ff"
           roughness={0.6}
           tilt={0.4}
@@ -67,7 +67,7 @@ export default function SpaceScene({ scrollProgress, mobile = false }: SpaceScen
       <Planet
         position={[-15, -5, -450]}
         radius={14}
-        texture="/textures/planets/venus.jpg"
+        texture="/textures/planets/venus.webp"
         atmosphere="#ffd9a0"
         roughness={0.85}
         tilt={0.15}

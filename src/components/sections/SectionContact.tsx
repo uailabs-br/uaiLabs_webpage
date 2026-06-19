@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useLanguage } from "@/lib/language-context";
 import Button from "@/components/Button";
 
@@ -11,7 +12,7 @@ export default function SectionContact() {
   return (
     <section
       id="contact"
-      className="relative flex min-h-screen w-full flex-col"
+      className="relative flex min-h-screen w-full scroll-mt-20 flex-col"
     >
       <div className="container-site flex flex-1 flex-col items-center justify-center py-20 text-center md:py-32">
         <motion.div
@@ -61,6 +62,14 @@ export default function SectionContact() {
           >
             {EMAIL}
           </a>
+          <Link
+            href="/privacy"
+            className="font-mono text-[11px] uppercase tracking-[0.15em] text-text-2 transition-colors duration-300 hover:text-text"
+          >
+            {t.contact.label === "Contato"
+              ? "Política de Privacidade"
+              : "Privacy Policy"}
+          </Link>
         </div>
         <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-text-2">
           &copy; {new Date().getFullYear()} uaiLabs. {t.contact.rights}

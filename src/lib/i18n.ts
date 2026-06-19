@@ -1,6 +1,13 @@
 export type Lang = "en" | "pt";
 
 const en = {
+  nav: {
+    services: "Services",
+    cases: "Cases",
+    about: "About",
+    faq: "FAQ",
+    contact: "Contact",
+  },
   hero: {
     eyebrow: "A universe of possibilities",
     headlinePre: "AI without complexity",
@@ -67,6 +74,13 @@ const en = {
 export type Translation = typeof en;
 
 const pt: Translation = {
+  nav: {
+    services: "Serviços",
+    cases: "Na prática",
+    about: "Sobre",
+    faq: "FAQ",
+    contact: "Contato",
+  },
   hero: {
     eyebrow: "Um universo de possibilidades",
     headlinePre: "IA sem complicação",

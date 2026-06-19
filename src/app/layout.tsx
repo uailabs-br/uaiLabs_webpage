@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, Space_Mono } from "next/font/google";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const syne = Syne({
@@ -17,7 +18,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://uailabs.com.br"),
+  metadataBase: new URL("https://uailabs.vercel.app"),
   title: "uaiLabs — AI agents and automation that ship to production",
   description:
     "From strategy to running infrastructure. AI agents and automation that ship to production and pay for themselves. Minas Gerais to worldwide.",
@@ -29,8 +30,15 @@ export const metadata: Metadata = {
     "RAG",
     "uaiLabs",
   ],
+  alternates: {
+    canonical: "https://uailabs.vercel.app",
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
+    url: "https://uailabs.vercel.app",
     title: "uaiLabs — AI agents and automation that ship to production",
     description:
       "From strategy to running infrastructure. No promise that doesn't turn into a number. A universe of possibilities, actually delivered.",
@@ -54,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${syne.variable} ${spaceMono.variable}`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <JsonLd />
       </head>
       <body>{children}</body>
     </html>

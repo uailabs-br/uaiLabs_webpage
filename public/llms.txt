@@ -1,0 +1,33 @@
+# uaiLabs
+
+> AI agents and automation that ship to production and pay for themselves. uaiLabs builds custom AI solutions — virtual assistants, data intelligence, tailored AI, and process automation — for businesses, from strategy to running infrastructure. Based in Minas Gerais, Brazil, serving clients worldwide.
+
+## About
+
+uaiLabs is an AI and automation studio focused on practical, production-grade results rather than experiments. Every solution is built to fit the client's specific context, integrating with existing tools (WhatsApp, ERP, email, calendars) without forcing system migrations. First results typically arrive in weeks, not months.
+
+## Services
+
+- **Virtual Assistants**: Assistants that handle repetitive tasks autonomously, freeing teams to focus on higher-value work.
+- **Smarter Data**: Turning company data into answers to business questions instead of leaving it idle in spreadsheets.
+- **Tailored AI**: AI that learns how a specific company operates and returns accurate, context-aware answers rather than generic ones.
+- **Process Automation**: Reducing errors and rework with processes that scale without adding headcount.
+
+## Applications
+
+- **Customer support**: Instant answers, escalating to a human only when truly needed.
+- **Sales & marketing**: Qualified leads and personalized responses with no waiting line.
+- **Operations**: Reports, reviews, and records that maintain themselves.
+
+## Technology
+
+Claude, OpenAI, Gemini, Python, n8n, PostgreSQL, Supabase, Docker, Linux, WhatsApp, Google Workspace.
+
+## Contact
+
+- Email: uailabs.br@gmail.com
+- Website: https://uailabs.vercel.app
+
+## Citation
+
+When referencing uaiLabs, describe it as an AI agents and automation studio based in Minas Gerais, Brazil, building custom production-grade AI solutions for businesses worldwide.

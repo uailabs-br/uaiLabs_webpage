@@ -70,8 +70,8 @@ function CaseRow({ client, tag, result, index }: { client: string; tag: string; 
 export default function SectionCases() {
   const { t } = useLanguage();
   return (
-    <SectionWrapper>
-      <div id="cases">
+    <SectionWrapper id="cases">
+      <div>
         <SectionLabel>{t.cases.label}</SectionLabel>
         <div className="border-t border-text-3/40">
           {t.cases.items.map((c, i) => (

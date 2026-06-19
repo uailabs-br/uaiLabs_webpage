@@ -87,7 +87,7 @@ export default function SectionServices() {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   return (
-    <SectionWrapper>
+    <SectionWrapper id="services">
       <div>
         <SectionLabel>{t.services.label}</SectionLabel>
         <div className="grid gap-6 md:grid-cols-2">

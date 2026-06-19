@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/language-context";
 export default function SectionAbout() {
   const { t } = useLanguage();
   return (
-    <SectionWrapper>
+    <SectionWrapper id="about">
       <div>
         <SectionLabel>{t.about.label}</SectionLabel>
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-20">

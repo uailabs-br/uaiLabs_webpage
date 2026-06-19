@@ -5,7 +5,7 @@ import { useLanguage } from "@/lib/language-context";
 import Button from "@/components/Button";
 
 const reveal = (delay: number) => ({
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0.01, y: 24 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.9, delay, ease: [0.25, 0.1, 0.25, 1] as const },
 });
@@ -45,7 +45,7 @@ export default function SectionHero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0.01, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.2 }}
             className="mt-12 flex flex-col gap-4 sm:flex-row"
