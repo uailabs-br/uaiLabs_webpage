@@ -7,13 +7,22 @@ import { useLanguage } from "@/lib/language-context";
 export default function Nav() {
   const { lang, toggle, t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      if (!menuOpen) {
+        setHidden(y > lastY && y > 80);
+      }
+      lastY = y;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [menuOpen]);
 
   const links = [
     { href: "#services", label: t.nav.services },
@@ -26,6 +35,8 @@ export default function Nav() {
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-30 transition-all duration-500 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
         scrolled || menuOpen
           ? "border-b border-text-3/40 bg-bg/70 backdrop-blur-md"
           : "border-b border-transparent"
