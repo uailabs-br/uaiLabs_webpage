@@ -19,7 +19,7 @@ export default function SectionHero() {
         <div className="relative max-w-3xl">
           <div
             aria-hidden
-            className="pointer-events-none absolute -inset-x-10 -inset-y-12 -z-10 rounded-[64px] bg-bg/55 blur-3xl"
+            className="pointer-events-none absolute -inset-x-16 -inset-y-16 -z-10 rounded-[64px] bg-bg/70 blur-3xl"
           />
           <motion.p
             {...reveal(0.2)}
