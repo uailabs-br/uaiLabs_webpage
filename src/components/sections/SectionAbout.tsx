@@ -9,7 +9,11 @@ export default function SectionAbout() {
   const { t } = useLanguage();
   return (
     <SectionWrapper id="about">
-      <div>
+      <div className="relative">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-x-12 -inset-y-14 -z-10 rounded-[64px] bg-bg/65 blur-3xl md:hidden"
+        />
         <SectionLabel>{t.about.label}</SectionLabel>
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-20">
           <h2 className="text-h2 text-text">

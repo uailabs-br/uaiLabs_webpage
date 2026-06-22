@@ -62,7 +62,11 @@ export default function SectionFAQ() {
   const { t } = useLanguage();
   return (
     <SectionWrapper id="faq">
-      <div>
+      <div className="relative">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-x-12 -inset-y-14 -z-10 rounded-[64px] bg-bg/65 blur-3xl md:hidden"
+        />
         <SectionLabel>{t.faq.label}</SectionLabel>
         <div className="mx-auto max-w-3xl">
           {t.faq.items.map((item, i) => (

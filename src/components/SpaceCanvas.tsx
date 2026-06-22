@@ -34,12 +34,33 @@ export default function SpaceCanvas() {
   const scrollProgress = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => {
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      scrollProgress.current = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+    let maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    let resizeTimer: ReturnType<typeof setTimeout>;
+
+    const recalc = () => {
+      maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     };
+
+    const onScroll = () => {
+      scrollProgress.current =
+        maxScroll > 0 ? Math.min(Math.max(window.scrollY / maxScroll, 0), 1) : 0;
+    };
+
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(recalc, 400);
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize, { passive: true });
+    window.visualViewport?.addEventListener("resize", onResize);
+
+    return () => {
+      clearTimeout(resizeTimer);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+      window.visualViewport?.removeEventListener("resize", onResize);
+    };
   }, []);
 
   if (reducedMotion) {

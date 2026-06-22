@@ -84,6 +84,7 @@ const en = {
         result: "Instant 24/7 support without adding headcount",
         description: "A customer support agent built to answer questions about the Rocket Fit app: how features work, common usage issues and known bugs. It uses RAG to pull relevant information from a structured knowledge base of FAQs and product documentation before generating any response, keeping answers accurate and grounded.",
         stack: ["n8n", "OpenAI", "Supabase", "pgvector", "WhatsApp", "Docker"],
+        demoUrl: "https://drive.google.com/file/d/1AmPGl6oxhrksiJ5OZWD4WDPev2xitmR0/preview",
       },
       {
         slug: "bestrip",
@@ -200,6 +201,7 @@ const pt: Translation = {
         result: "Suporte 24/7 sem precisar contratar",
         description: "Um agente de suporte construído para responder dúvidas sobre o app Rocket Fit: como as funcionalidades funcionam, problemas comuns e bugs conhecidos. Usa RAG para puxar informações relevantes de uma base de FAQs e documentação do produto antes de gerar qualquer resposta.",
         stack: ["n8n", "OpenAI", "Supabase", "pgvector", "WhatsApp", "Docker"],
+        demoUrl: "https://drive.google.com/file/d/15x5ZCeljzt78zUamlwJ5qZVkugoEkxai/preview",
       },
       {
         slug: "bestrip",
