@@ -73,6 +73,24 @@ function CasesInner() {
     [totalSlides]
   );
 
+  // Deep-link: on mount, jump to the project named in the URL hash (e.g. /cases#olivia)
+  const initializedRef = useRef(false);
+  useEffect(() => {
+    if (initializedRef.current) return;
+    initializedRef.current = true;
+    const hash = decodeURIComponent(window.location.hash.replace("#", ""));
+    if (!hash) return;
+    const idx = t.cases.projects.findIndex((p) => p.slug === hash);
+    if (idx >= 0) setActiveIndex(idx + 1);
+  }, [t.cases.projects]);
+
+  // Keep the URL hash in sync with the active project so the link is shareable
+  useEffect(() => {
+    const project = t.cases.projects[activeIndex - 1];
+    const url = project ? `#${project.slug}` : window.location.pathname;
+    window.history.replaceState(null, "", url);
+  }, [activeIndex, t.cases.projects]);
+
   const next = useCallback(() => {
     if (cooldownRef.current) return;
     cooldownRef.current = true;
@@ -87,16 +105,17 @@ function CasesInner() {
     setTimeout(() => { cooldownRef.current = false; }, 700);
   }, [activeIndex, goTo]);
 
-  // Wheel (vertical + horizontal) → one slide at a time
+  // Wheel — horizontal only. Vertical wheel is left alone so card content can scroll.
   useEffect(() => {
     let accumulated = 0;
     let timeout: ReturnType<typeof setTimeout>;
 
     const onWheel = (e: WheelEvent) => {
+      // Ignore mostly-vertical scrolling — let it scroll the card content naturally
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+
       e.preventDefault();
-      const delta =
-        Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
-      accumulated += delta;
+      accumulated += e.deltaX;
 
       clearTimeout(timeout);
       timeout = setTimeout(() => {
@@ -222,7 +241,7 @@ function CasesInner() {
               }}
               className="mt-12 font-mono text-[12px] uppercase tracking-[0.2em] text-text-3"
             >
-              scroll →
+              {t.cases.dragHint}
             </motion.div>
           </motion.div>
         </div>
@@ -288,6 +307,28 @@ function CasesInner() {
           </div>
         </div>
       </div>
+
+      {/* Side arrows */}
+      <button
+        onClick={prev}
+        disabled={activeIndex === 0}
+        aria-label="Previous"
+        className="group fixed left-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-text-3/40 bg-bg/60 text-text-2 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:text-text disabled:pointer-events-none disabled:opacity-0 md:left-6 md:h-14 md:w-14"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:-translate-x-0.5">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+      <button
+        onClick={next}
+        disabled={activeIndex === totalSlides - 1}
+        aria-label="Next"
+        className="group fixed right-3 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-text-3/40 bg-bg/60 text-text-2 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:text-text disabled:pointer-events-none disabled:opacity-0 md:right-6 md:h-14 md:w-14"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-0.5">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
 
       {/* Indicators */}
       <div className="fixed bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center gap-3">

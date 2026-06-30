@@ -46,3 +46,6 @@ next-env.d.ts
 # seo audit artifacts
 /screenshots/
 seo-audit-report.md
+
+# heavy source images (compressed versions live in /public)
+/foto-perfil.png

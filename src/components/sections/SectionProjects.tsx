@@ -16,12 +16,14 @@ function useIsTouchDevice() {
 }
 
 function ProjectPreview({
+  slug,
   name,
   tag,
   result,
   problem,
   index,
 }: {
+  slug: string;
   name: string;
   tag: string;
   result: string;
@@ -30,7 +32,7 @@ function ProjectPreview({
 }) {
   const isTouch = useIsTouchDevice();
   const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (!isTouch || !ref.current) return;
@@ -45,8 +47,9 @@ function ProjectPreview({
   const active = isTouch && inView;
 
   return (
-    <motion.div
+    <motion.a
       ref={ref}
+      href={`/cases#${slug}`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -55,7 +58,7 @@ function ProjectPreview({
         delay: index * 0.1,
         ease: [0.25, 0.1, 0.25, 1],
       }}
-      className={`group relative overflow-hidden rounded-2xl border bg-surface-1/20 p-6 backdrop-blur-md transition-all duration-500 sm:p-8 ${
+      className={`group relative block overflow-hidden rounded-2xl border bg-surface-1/20 p-6 backdrop-blur-md transition-all duration-500 sm:p-8 ${
         active
           ? "-translate-y-1 border-primary/30 bg-surface-1/80 shadow-[0_8px_30px_rgba(74,111,255,0.12)]"
           : "border-white/5 hover:-translate-y-1 hover:bg-surface-1/80 hover:border-primary/30 hover:shadow-[0_8px_30px_rgba(74,111,255,0.12)]"
@@ -78,7 +81,7 @@ function ProjectPreview({
           {result}
         </span>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
@@ -92,6 +95,7 @@ export default function SectionProjects() {
           {t.cases.projects.map((p, i) => (
             <ProjectPreview
               key={p.slug}
+              slug={p.slug}
               name={p.name}
               tag={p.tag}
               result={p.result}

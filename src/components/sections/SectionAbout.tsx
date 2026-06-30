@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
 import SectionLabel from "./SectionLabel";
 import { useLanguage } from "@/lib/language-context";
@@ -33,13 +34,13 @@ export default function SectionAbout() {
             <p className="text-body text-text-2">
               {t.about.body2}
             </p>
-            <a
-              href="#contact"
+            <Link
+              href="/ruan-coelho"
               className="mt-2 inline-flex items-center gap-2 font-mono text-sm text-primary transition-colors duration-300 hover:text-secondary"
             >
               {t.about.cta}
               <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
